@@ -1,0 +1,37 @@
+Assignment 3
+STATE SPACE PUZZLE
+
+BY: MADDI SIDDART
+PES1201800269
+
+How to compile :
+
+  gcc -c A3_header_PES1201800269.h A3_client_PES1201800269.c
+  gcc -c A3_header_PES1201800269.h A3_impl_PES1201800269.c
+  gcc A3_client_PES1201800269.o A3_impl_PES1201800269.o
+  ./a.out
+
+
+In this puzzle we have been given the capacity of the jugs and start and the end STATE
+and we have to find the path for which we use doubly linked list
+and we use a call back array for backtracking
+
+I have used 3 structures in total
+1 for the state and the other two for the list
+list is doubly linked list
+points to next and previous node
+callback array for transitions (fn_index ranges from 0-5)
+the order is given to us in mail
+
+we first check if the start and end states are valid or not
+then we follow the procedure for backtracking
+we go through the list till the end and apply any of the transitions and check if the next state
+is not repeated and is valid , we add the state at the end we repeat
+till our next state is the end state and when we reach the end
+we print the list as it is one of the solution.
+
+To find all solution we use backtracking by removing a state and going back and choosing a different
+transition and repeat the same .
+
+We do this using basic doubly linked list functions such as adding at the end
+and removing at the end

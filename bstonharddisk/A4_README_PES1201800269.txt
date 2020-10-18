@@ -1,0 +1,26 @@
+Assignment 4 : BINARY SEARCH TREE ON HARD DISK
+
+Done by : MADDI SIDDART
+SRN: PES1201800269
+
+We implement the functions :
+insert, Delete, in-order and pre-order on the binary search tree on hard disk.
+
+we cannot store pointers directly in the file hence we use addresses of things with file offsets.
+In the beginning of the file we store the structure of the tree as a header
+and later we start storing the nodes which contain information about the offset values of the left subtree
+and the right subtree and it also contains the key value of the node.
+
+For the Delete function :
+ there are 4 cases :
+ delete node with no child nodes,
+ delete node with one child node(either left or right),
+ delete node with both children,
+ delete node when it doesn't exist(do nothing).
+
+ For insert function : we first check if there are any free nodes available
+ if not then we go through the tree to find the position of key and find the
+ left and right offsets and write the node onto the file.
+ if free_head is not -1 that means there are free spaces which will be filled first
+
+ for in-order and Preorder we call the recursive functions inside them to find the traversals.
